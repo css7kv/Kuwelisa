@@ -1,0 +1,40 @@
+== README
+Carpool for people in townships for people that don't have smartphones
+
+People can sign up on the app, with the township. When someone is driving somewhere they can plug the details into the app and text will be sent to people within a certain radius (ie. within the town ship). They can send a text message back to say 'yes' or 'no'. Once car is full, they'll get a message back saying that it's full. Driver will be given phone number to meet up.
+
+Technologies:
+Twilio
+Location/ Maps
+
+Users Model
+Rides Model 
+has_and_belongs_to_many
+
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
