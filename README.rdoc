@@ -8,7 +8,21 @@ Twilio
 Location/ Maps
 
 Users Model
+Phone number: Int
+Name: String
+*Photo: attachment*
+Township: String
+Intro: Text
+
 Rides Model 
+Date
+Time
+Duration: Int
+Start location
+Finish location
+Price: Float
+DriverID: Int
+
 has_and_belongs_to_many
 
 
