@@ -3,4 +3,15 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  def email_required?
+  	false
+  end
+
+  def email_changed?
+  	false
+  end
+
+  validates_uniqueness_of :email, :allow_blank => true
+
+  validates :firstname, presence: true
 end
