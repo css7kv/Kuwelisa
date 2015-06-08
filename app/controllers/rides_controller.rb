@@ -1,6 +1,6 @@
 class RidesController < ApplicationController
   def index
-  	@rides = Ride.where.not(pcount: 0)
+  	@rides = Ride.where.not(pcount: 0).where(:datetime => Time.zone.now..1.year.from_now).order(:datetime)
     @count = "1"
 
   end

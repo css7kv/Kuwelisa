@@ -5,7 +5,7 @@
 	<strong> You have no rides yet :( </strong>
 	<% else %>
 	<p>
-	<% current_user.rides.each do |ride| %>
+	<% current_user.rides.order(:datetime).each do |ride| %>
 		<%= ride.startloc %> <br>
 		<%= ride.finishloc %> <br>
 		Passenger seats:<%= ride.pcount %><br>
