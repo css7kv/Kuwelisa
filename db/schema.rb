@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608105806) do
+ActiveRecord::Schema.define(version: 20150608183643) do
 
   create_table "rides", force: :cascade do |t|
     t.datetime "datetime"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150608105806) do
     t.integer  "driverid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "pcount"
   end
 
   create_table "rides_users", id: false, force: :cascade do |t|

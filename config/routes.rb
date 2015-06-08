@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'rides#index'
 
-  resources :rides
+  resources :rides do
+    member do
+        post 'signup'
+      end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

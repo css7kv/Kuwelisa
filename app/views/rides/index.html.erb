@@ -8,6 +8,7 @@
 	<% current_user.rides.each do |ride| %>
 		<%= ride.startloc %> <br>
 		<%= ride.finishloc %> <br>
+		Passenger seats:<%= ride.pcount %><br>
 		 <%= ride.price %> <br>
 		<%= ride.datetime %> <br>
 		<%= ride.duration %> <br>
@@ -29,6 +30,15 @@
 		R <%= ride.price %> <br>
 		<%= ride.datetime %> <br>
 		<%= ride.duration %> <br>
+		Remaining seats:<%= ride.pcount %><br>
+		<% if ride.users.include?(current_user) %>
+			You've already signed up for this ride!
+		<% else %>
+			<%= form_tag signup_ride_path(ride) do %>
+  			<%= text_field_tag "count", "1" %>
+  			<%= submit_tag "Sign Up" %>
+  			<% end %>
+		<% end %>
 	</p>
 	<% end %>
 	<% end %>

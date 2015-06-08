@@ -1,6 +1,8 @@
 class RidesController < ApplicationController
   def index
-  	@rides = Ride.all
+  	@rides = Ride.where.not(pcount: 0)
+    @count = "1"
+
   end
 
 
@@ -46,9 +48,20 @@ class RidesController < ApplicationController
   	redirect_to rides_path
   end 
 
+  def signup
+      @ride = Ride.find(params[:id])
+      @ride.users << current_user
+      @count = "1"
+      @ride.pcount = @ride.pcount - @count.to_i
+      @ride.save
+      
+
+      redirect_to @ride
+  end
+
   private
   	def ride_params
-  		params.require(:ride).permit( :startloc, :finishloc, :price, :driverid, :datetime, :duration, :driverid)
+  		params.require(:ride).permit( :startloc, :finishloc, :price, :driverid, :datetime, :duration, :driverid, :pcount)
   		
   	end
 
