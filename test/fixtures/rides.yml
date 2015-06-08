@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  datetime: 2015-06-08 12:55:37
+  duration: 2015-06-08 12:55:37
+  startloc: MyString
+  finishloc: MyString
+  price: 1.5
+  driverid: 1
+
+two:
+  datetime: 2015-06-08 12:55:37
+  duration: 2015-06-08 12:55:37
+  startloc: MyString
+  finishloc: MyString
+  price: 1.5
+  driverid: 1

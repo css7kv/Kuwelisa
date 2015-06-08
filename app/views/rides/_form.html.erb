@@ -1,0 +1,24 @@
+<%= simple_form_for @ride do |form| %>
+<p>
+	<%= form.input :datetime, label: "Scheduling Information" %>
+</p>
+
+<p>
+	<%= form.input :duration, label: "Approximate Duration" %>
+</p>
+
+<p>
+	<%= form.input :startloc, label: "Starting Location" %>
+</p>
+
+<p>
+	<%= form.input :finishloc, label: "End Location" %>
+</p>
+
+<p>
+	<%= form.input :price, label: "Suggested Contribution for Gas" %>
+</p>
+
+<%= form.button :submit %>
+
+<% end %>

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+# Simple Form
+gem 'simple_form'
 # Twitter Bootstrap
 gem "twitter-bootstrap-rails"
 # Using Devise for Login Authentication
@@ -39,6 +42,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
+  # Pry
+  gem 'pry-rails'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

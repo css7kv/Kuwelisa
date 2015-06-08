@@ -17,8 +17,8 @@ Intro: Text
 Rides Model 
 Date
 Time
-Duration: Int
-Start location
+Duration: Time
+Startlocation
 Finish location
 Price: Float
 DriverID: Int
