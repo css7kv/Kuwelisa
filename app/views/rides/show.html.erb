@@ -7,3 +7,8 @@
 		<%= @ride.datetime %> <br>
 		<%= @ride.duration %> <br>
 	</p>
+
+<% if @ride.driverid == current_user.id %>
+<%= button_to "Delete Ride", @ride, :method => :delete, data: {confirm: "Are you sure you want to delete this ride?"} %><br>
+<%= button_to 'Edit', edit_ride_path(@ride), :method => :get %><br>
+<% end %>
