@@ -12,7 +12,7 @@ class RidesController < ApplicationController
   def create 
   	@ride = Ride.create(ride_params)
   	@ride.driverid = current_user.id
-
+  	@ride.users << current_user
   	if @ride.save 
   		redirect_to @ride
   	else
