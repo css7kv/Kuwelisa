@@ -9,9 +9,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :firstname
-    devise_parameter_sanitizer.for(:sign_up) << :lastname
-    devise_parameter_sanitizer.for(:sign_up) << :township
-    devise_parameter_sanitizer.for(:sign_up) << :intro
-   end
+    devise_parameter_sanitizer.for(:sign_up) << :firstname << :lastname << :phone << :township << :password << :password_confirmation
+    devise_parameter_sanitizer.for(:account_update) << :firstname << :lastname << :phone << :township <<  :password << :password_confirmation << :current_password
+  end
+
+  
+
+
 end

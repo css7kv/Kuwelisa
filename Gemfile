@@ -6,6 +6,8 @@ gem 'twilio-ruby'
 gem 'simple_form'
 # Twitter Bootstrap
 gem "twitter-bootstrap-rails"
+# Bootstrap Helpers
+gem 'bh', '~> 1.2'
 # Using Devise for Login Authentication
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

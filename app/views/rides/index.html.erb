@@ -64,11 +64,15 @@
 		</div>
 		<% else %>
 		<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-center">
-			<%= form_tag signup_ride_path(ride) do %>
-  			<%= text_field_tag "count", "1" %>
-  			<%= submit_tag "Sign Up" %>
-  		</div>
+			<%= simple_form_for :signup, { url: signup_ride_path(ride) } do |f| %>
+  				<%= f.input :count, label: "Number of Passengers", collection: 1..ride.pcount %>
+  				<%= f.button :submit, "Sign Up" %>
   			<% end %>
+  		</div>
+
+  		
+            
+                
 		<% end %>
 		
 		<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-right">
