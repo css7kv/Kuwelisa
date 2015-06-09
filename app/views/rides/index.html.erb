@@ -9,13 +9,13 @@
 	<% current_user.rides.order(:datetime).where(:datetime => Time.zone.now..1.year.from_now).order(:datetime).each do |ride| %>
 	 
 	<div class = "row" >
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	<div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
 		From: <strong><%= ride.startloc %></strong> to <strong><%= ride.finishloc %></strong> <br>
 		At: <strong><%= ride.datetime %> </strong>
 	</div>
 
 	<% if ride.driverid == current_user.id %>
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 text-right">	
+	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 text-right">	
 		<%= link_to '<i class="fa fa-trash-o fa-4x"></i>'.html_safe + " Delete", ride, :method => :delete, data: {confirm: "Are you sure you want to delete this ride?"} %>
 		</div>
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 text-right">
@@ -23,7 +23,7 @@
 		</div>
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 text-right">
 	<% else %>
-		<div class="col-sm-offset-4 col-sm-2  col-xs-offset-8 col-xs-4 col-lg-6 col-md-offset-0 col-md-6 col-lg-offset-0 text-right">
+		<div class="col-sm-offset-5 col-sm-2  col-xs-offset-8 col-xs-4 col-lg-6 col-md-offset-0 col-md-6 col-lg-offset-0 text-right">
 	<% end %>
 		<%= link_to '<i class="fa fa-arrow-circle-right fa-4x"></i>'.html_safe + " More Info", ride_path(ride) %>
 		</div>
@@ -47,24 +47,32 @@
 	<p>
 	
 	<div class = "row" >
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 		From: <strong><%= ride.startloc %></strong> to <strong><%= ride.finishloc %></strong> <br>
 		At: <strong><%= ride.datetime %> </strong>	
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-left">
+		<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-left">
 		<m><%= ride.pcount %></m> Seats Left<br>
 		</div>
-		<div class="col-lg-3 col-md-6 text-right">
+		
 		<% if ride.users.include?(current_user) %>
-			You've already signed up for this ride!
+		<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-center">
+			<%= link_to '<i class="fa fa-check-circle-o fa-4x"></i>'.html_safe, ride_path(ride) %>  <br>
+			 You're Signed Up! 
+		</div>
 		<% else %>
+		<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-center">
 			<%= form_tag signup_ride_path(ride) do %>
   			<%= text_field_tag "count", "1" %>
   			<%= submit_tag "Sign Up" %>
+  		</div>
   			<% end %>
 		<% end %>
-		<%= link_to 'More Info', ride_path(ride) %>
-		</div>		
+		
+		<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-right">
+		<%= link_to '<i class="fa fa-arrow-circle-right fa-4x"></i>'.html_safe + 'More Info', ride_path(ride) %>
+		</div>
+			
 	</div>
 	<hr>
 	
