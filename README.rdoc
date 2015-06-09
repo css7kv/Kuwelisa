@@ -25,12 +25,20 @@ DriverID: Int
 
 has_and_belongs_to_many
 
-Texts:
+Texts: * See Ride_Helper
 User Signs Up- Confirmation that account has been created 
 Ride Signup- Confirmation to Driver and Passenger
 Ride Edit- Confirmation to all other passengers
 Ride Destroy- Confirmation to all other passengers
 
+TODO:
+Validations- 1 phone number per user
+Validations- error messages if not proper south african number (Starts with without +27)
+Ride_Helper - Automatically add +27 to text sender
+Maps - Adding visible map and distance calculating
+Update Profile- NOT WORKING AT ALL
+Rides Displayed - Only Display Rides with the right township
+Fix login page to look pretty :)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
