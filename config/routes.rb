@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'rides#index'
-  get 'twilio/send_text_message' 
+  root 'rides#index' 
 
   resources :rides do
     get 'send_text_message'
