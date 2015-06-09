@@ -25,6 +25,12 @@ DriverID: Int
 
 has_and_belongs_to_many
 
+Texts:
+User Signs Up- Confirmation that account has been created 
+Ride Signup- Confirmation to Driver and Passenger
+Ride Edit- Confirmation to all other passengers
+Ride Destroy- Confirmation to all other passengers
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

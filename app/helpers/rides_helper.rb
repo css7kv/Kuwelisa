@@ -51,6 +51,16 @@ module RidesHelper
   #   to: current_user.phone,
   #   body: 'You have successfully created an account for Kuwelisa!'
   # )
+  elsif num == 2
+    for ride.users.each do |passenger|
+      if passenger.id != driver.id 
+      message = @client.messages.create(
+      from: from_number,
+      to: passenger.phone,
+      body: "Your ride on the #{datetime} has been changed. It is now from #{ride.startloc} to #{ride.finishloc} on #{ride.datetime}. Please go online if you would like more details."
+    )
+      end
+    end
 	end
 
   redirect_to rides_path
