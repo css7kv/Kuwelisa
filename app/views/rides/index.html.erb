@@ -9,7 +9,7 @@
 	<% current_user.rides.order(:datetime).each do |ride| %>
 	 
 	<div class = "row" >
-	<div class="col-lg-6 col-md-6">
+	<div class="col-lg-6 col-md-6 ">
 		From: <strong><%= ride.startloc %></strong> to <strong><%= ride.finishloc %></strong> <br>
 		At: <strong><%= ride.datetime %> </strong>
 	</div>
