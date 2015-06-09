@@ -1,4 +1,4 @@
-<nav id="mainNav" class="navbar navbar-defult navbar-fixed-top">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -10,7 +10,6 @@
 			<ul class="nav navbar-nav navbar-left">
 			<% if user_signed_in? %>
 				<li><%= link_to 'Home', rides_path, :class => 'navbar-link' %> </li>
-				<li><%= link_to 'Add Ride', new_ride_path, :class => 'navbar-link' %> </li>
 			<% end %>
 			</ul>
 
@@ -19,7 +18,8 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
-				  <li><%= link_to current_user.firstname, edit_user_registration_path, :class => 'navbar-link' %> </li>
+				  <li><%= link_to 'Add Ride', new_ride_path, :class => 'navbar-link' %> </li>
+				  <li><%= link_to '<i class="fa fa-user fa-lg"></i>'.html_safe + " " + current_user.firstname, edit_user_registration_path, :class => 'navbar-link' %> </li>
 				  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 				<% else %>
 				  <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>

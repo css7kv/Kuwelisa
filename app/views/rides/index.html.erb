@@ -1,4 +1,5 @@
 <h1>Rides</h1>
+<div class = "container">
 <h2>My Rides</h2>
 
 	<% if current_user.rides.empty? %>
@@ -6,18 +7,31 @@
 	<% else %>
 	<p>
 	<% current_user.rides.order(:datetime).each do |ride| %>
-		<%= ride.startloc %> <br>
-		<%= ride.finishloc %> <br>
-		Passenger seats:<%= ride.pcount %><br>
-		 <%= ride.price %> <br>
-		<%= ride.datetime %> <br>
-		<%= ride.duration %> <br>
+	 
+	<div class = "row" >
+	<div class="col-lg-6 col-md-6">
+		From: <strong><%= ride.startloc %></strong> to <strong><%= ride.finishloc %></strong> <br>
+		At: <strong><%= ride.datetime %> </strong>
+	</div>
+	<div class="col-lg-6 col-md-6 text-right">	
+
+	<% if ride.driverid == current_user.id %>
+		<%= button_to "Delete Ride", ride, :method => :delete, data: {confirm: "Are you sure you want to delete this ride?"} %>
+		<%= button_to 'Edit', edit_ride_path(ride), :method => :get %>
 	<% end %>
+		<%= link_to 'More Info', ride_path(ride) %>
+		</div>
+	</div>
+	<hr>
+	
+	
+	<% end %>
+	</div>
 	</p>
 	<%end %>
 
 
-
+<div class = "container"> 
 <h2>All Rides</h2>
 
 	<% if @rides.empty? %>
@@ -25,12 +39,16 @@
 	<% else %>
 	<% @rides.each do |ride| %>
 	<p>
-		<%= ride.startloc %> <br>
-		<%= ride.finishloc %> <br>
-		R <%= ride.price %> <br>
-		<%= ride.datetime %> <br>
-		<%= ride.duration %> <br>
+	
+	<div class = "row" >
+		<div class="col-lg-6 col-md-6 ">
+		From: <strong><%= ride.startloc %></strong> to <strong><%= ride.finishloc %></strong> <br>
+		At: <strong><%= ride.datetime %> </strong>	
+		</div>
+		<div class="col-lg-3 col-md-6 text-right">
 		Remaining seats:<%= ride.pcount %><br>
+		</div>
+		<div class="col-lg-3 col-md-6 text-right">
 		<% if ride.users.include?(current_user) %>
 			You've already signed up for this ride!
 		<% else %>
@@ -40,6 +58,13 @@
   			<% end %>
 		<% end %>
 		<%= link_to 'More Info', ride_path(ride) %>
-	</p>
+		</div>		
+	</div>
+	<hr>
+	
+	
+	
 	<% end %>
+	</div>
+	</p>
 	<% end %>

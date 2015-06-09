@@ -47,12 +47,12 @@
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: #f05f40;
+    color: #2b12ed;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #f05f40!important;
+    color: #2b12ed!important;
     background-color: transparent;
 }
 
@@ -64,4 +64,11 @@
 body {
 	padding-top: 50px;
 	background-color: lightblue;
+}
+
+strong {
+    color: brown;
+    font-size: 20px;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    text-transform: uppercase;
 }
