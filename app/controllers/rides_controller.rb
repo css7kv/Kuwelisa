@@ -1,4 +1,5 @@
 class RidesController < ApplicationController
+  include RidesHelper
   def index
   	@rides = Ride.where.not(pcount: 0).where(:datetime => Time.zone.now..1.year.from_now).order(:datetime)
     @count = "1"
@@ -56,9 +57,13 @@ class RidesController < ApplicationController
 
       @ride.save
       
-      redirect_to twilio_send_text_message_path
+      send_text_message(@ride, 1)
       
   end
+
+  
+
+
 
   private
   	def ride_params

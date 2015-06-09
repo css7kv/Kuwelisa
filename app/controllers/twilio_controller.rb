@@ -9,6 +9,7 @@ def send_text_message
 	account_sid = 'AC818b91aaf3aa4883ebd967c1ce05b4f8'
 	auth_token = '635c887a39e2db3fffb74f31806d54d2'
 	from_number = "+14086414548"
+	
 
 	# Test Credentials
 	# account_sid = 'ACec40d0700dbd21edb9714b8b6ee492d6'
