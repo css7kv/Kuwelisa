@@ -13,14 +13,16 @@
 			to <strong><%= @ride.finishloc %></strong> <br><br>
 
 			<% if @ride.driverid == current_user.id %>
+				<strong> You're driving! </strong><br>
 				<b>Passenger Contact Information:<br>
 					<% @ride.users.where.not(id: current_user.id).each do |user| %>
 						Name: <%= user.firstname %> <%= user.lastname %><br>
 							Phone number: <%= user.phone %><br><br><br><br></b>
 					<% end %>
 
-				<%= button_to "Delete Ride", @ride, :method => :delete, data: {confirm: "Are you sure you want to delete this ride?"} %><br>
-				<%= button_to 'Edit', edit_ride_path(@ride), :method => :get %><br>
+				<%= link_to '<i class="fa fa-trash-o fa-4x"></i>'.html_safe + " Delete", @ride, :method => :delete, data: {confirm: "Are you sure you want to delete this ride?"} %><br><br>
+				<%= link_to '<i class="fa fa-pencil-square-o fa-4x"></i>'.html_safe + " Edit", edit_ride_path(@ride), :method => :get %>
+		
 			<% else %>
 				<b>Driver Contact Information:<br>
 					Name: <%= @driver.firstname %> <%= @driver.lastname %><br>
