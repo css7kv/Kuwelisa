@@ -41,6 +41,7 @@ class RidesController < ApplicationController
 
   def show 
   	@ride = Ride.find(params[:id])
+    @driver = User.find(@ride.driverid)
 
   end
 
