@@ -14,6 +14,45 @@
  *= require_self
  */
 
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: rgba(0,0,0,1);
+    background-image: url(http://thumbs.media.smithsonianmag.com//filer/Life-List-Table-Mountain-South-Africa-631.jpg__800x600_q85_crop.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px;
+    text-align: center;
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+header .header-content .header-content-inner hr {
+    margin: 30px auto;
+}
+
+header .header-content .header-content-inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,.7);
+}
+
 
 
 .navbar-default {
@@ -81,4 +120,6 @@ m {
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     text-transform: uppercase;
 }
+
+
 
