@@ -3,7 +3,8 @@ module RidesHelper
 	def send_text_message(ride, num)
 		# 0 = User Creates an Account (current_user)
 		# 1 = Ride Sign Up (current_user and driver)
-		# 2 = Ride Edit/ Ride Destroy (all ride.users)
+		# 2 = Ride Edit (all ride.users)
+		# 3 = Ride Destroy (passengers)
 
   #Real Credentials
       account_sid = 'AC818b91aaf3aa4883ebd967c1ce05b4f8'
@@ -57,12 +58,22 @@ module RidesHelper
       message = @client.messages.create(
       from: from_number,
       to: passenger.phone,
-      body: "Your ride on the #{datetime} has been changed. It is now from #{ride.startloc} to #{ride.finishloc} on #{ride.datetime}. Please go online if you would like more details."
+      body: "Your ride on the #{ride.datetime} has been changed. It is now from #{ride.startloc} to #{ride.finishloc} on #{ride.datetime}. Please go online if you would like more details."
     )
      end
     end
-	end
+elsif num == 3
+	ride.users.each do |passenger|
+      if passenger.id != driver.id 
+      message = @client.messages.create(
+      from: from_number,
+      to: passenger.phone,
+      body: "Your ride on the #{ride.datetime} from #{ride.startloc} to #{ride.finishloc} has been cancelled."
+    )
+  end
+end
+end
 
-  redirect_to rides_path
+  
 end
 end

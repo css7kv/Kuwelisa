@@ -31,7 +31,8 @@ class RidesController < ApplicationController
   def update
   	@ride = Ride.find(params[:id])
   	if @ride.save
-  		redirect_to @ride
+      send_text_message(@ride, 2)
+      redirect_to @ride
   	else
   		render :edit
   	end
@@ -40,13 +41,14 @@ class RidesController < ApplicationController
 
   def show 
   	@ride = Ride.find(params[:id])
+
   end
 
   def destroy
   	@ride = Ride.find(params[:id])
+    send_text_message(@ride, 3)
   	@ride.destroy
-
-  	redirect_to rides_path
+    redirect_to rides_path
   end 
 
   def signup
@@ -58,6 +60,7 @@ class RidesController < ApplicationController
       @ride.save
       
       send_text_message(@ride, 1)
+      redirect_to rides_path
       
   end
 
