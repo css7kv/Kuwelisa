@@ -54,7 +54,6 @@ header .header-content .header-content-inner p {
 }
 
 
-
 .navbar-default {
     border-color: rgba(34,34,34,.05);
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
@@ -68,12 +67,12 @@ header .header-content .header-content-inner p {
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
-    color: #f05f40;
+    color: rgba(43, 70, 133, 1);
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-    color: #eb3812;
+    color: rgba(26, 49, 108,1);
 }
 
 .navbar-default .nav > li>a,
@@ -86,12 +85,12 @@ header .header-content .header-content-inner p {
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: #2b12ed;
+    color: rgba(43, 70, 133, 1);
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #2b12ed!important;
+    color: rgba(43, 70, 133, 1)!important;
     background-color: transparent;
 }
 
@@ -100,9 +99,110 @@ header .header-content .header-content-inner p {
     background-color: transparent;
 }
 
+@media(min-width:768px) {
+    .navbar-default {
+        border-color: rgba(255,255,255,.3);
+        background-color: rgba(43, 18, 237, 0.6);
+    }
+
+    .navbar-default .navbar-header .navbar-brand {
+        color: rgba(255,255,255,.7);
+    }
+
+    .navbar-default .navbar-header .navbar-brand:hover,
+    .navbar-default .navbar-header .navbar-brand:focus {
+        color: #fff;
+    }
+
+    .navbar-default .nav > li>a,
+    .navbar-default .nav>li>a:focus {
+        color: rgba(255,255,255,.7);
+    }
+
+    .navbar-default .nav > li>a:hover,
+    .navbar-default .nav>li>a:focus:hover {
+        color: #fff;
+    }
+
+    .navbar-default.affix {
+        border-color: rgba(34,34,34,.05);
+        background-color: #fff;
+    }
+
+    .navbar-default.affix .navbar-header .navbar-brand {
+        font-size: 14px;
+        color: rgba(43, 70, 133, 1);
+    }
+
+    .navbar-default.affix .navbar-header .navbar-brand:hover,
+    .navbar-default.affix .navbar-header .navbar-brand:focus {
+        color: rgba(43, 70, 133, 1);
+    }
+
+    .navbar-default.affix .nav > li>a,
+    .navbar-default.affix .nav>li>a:focus {
+        color: #222;
+    }
+
+    .navbar-default.affix .nav > li>a:hover,
+    .navbar-default.affix .nav>li>a:focus:hover {
+        color: rgba(43, 70, 133, 1);
+    }
+}
+
 body {
 	padding-top: 50px;
 	background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+
+}
+
+hr {
+    border-width: 2px;
+}
+
+hr.light {
+    border-color: #fff;
+}
+
+a {
+    color: rgba(43, 70, 133, 1);
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+a:hover,
+a:focus {
+    color: rgba(26, 49, 108,1);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    border-color: rgba(26, 49, 108,1);
+    color: #fff;
+    background-color: rgba(26, 49, 108,1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 strong {
@@ -119,6 +219,16 @@ m {
     font-size: 40px;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     text-transform: uppercase;
+}
+
+::-moz-selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+
+body {
+    webkit-tap-highlight-color: #222;
 }
 
 
