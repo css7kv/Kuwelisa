@@ -53,10 +53,11 @@ class RidesController < ApplicationController
       @ride.users << current_user
       @count = "1"
       @ride.pcount = @ride.pcount - @count.to_i
+
       @ride.save
       
-
-      redirect_to @ride
+      redirect_to twilio_send_text_message_path
+      
   end
 
   private

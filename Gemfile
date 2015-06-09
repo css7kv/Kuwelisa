@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# Twilio
+gem 'twilio-ruby'
 # Simple Form
 gem 'simple_form'
 # Twitter Bootstrap

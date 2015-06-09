@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'rides#index'
-
+  get 'twilio/send_text_message'
   resources :rides do
     member do
         post 'signup'
