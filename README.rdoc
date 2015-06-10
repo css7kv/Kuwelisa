@@ -38,6 +38,7 @@ Ride Destroy- Confirmation to all other passengers
 TODO:
 Unsignup for ride
 Upload to Heroku
+Validations for New Ride
 
 Extra TODO:
 get rid of alerts
