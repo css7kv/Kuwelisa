@@ -16,6 +16,7 @@
 
 
 
+
 .navbar-default {
     border-color: rgba(34,34,34,.05);
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
@@ -114,7 +115,7 @@
 
 body {
 	
-	background-color: lightblue;
+	background-color: #003333;
     width: 100%;
     height: 100%;
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
@@ -159,12 +160,23 @@ h4,
 h5,
 h6 {
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    color: #CCFFFF;
 }
 
+h2 {
+    font-size: 60px;
+}
 p {
     margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.5;
+    color: #CCFFFF;
+}
+
+.simple_form label {
+ 
+  text-align: center;
+  color: #CCFFFF;
 }
 
 strong {
@@ -204,7 +216,7 @@ html,body {
 h1 {
     font-family: 'Permanent Marker', cursive;
   font-size:100px;
-  color: rgba(255,255,255,1);
+  color: ##CCFFFF;
   text-shadow: 4px 4px rgba(0,0,0,1);
 }
 
@@ -223,7 +235,7 @@ h1 {
   min-height:100%;
   background-image: url(http://www.5thaveauctions.co.za/Aug10/images/zoom_199.jpg);
   background-size: cover;
-  color:#eee;
+  color: #CCFFFF;
   overflow:hidden;
 }
 
@@ -235,6 +247,18 @@ h1 {
 .v-center {
   margin-top:7%;
 }
+
+.footer a {
+    padding: 0 0 0 0;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+}
+
+
 
 
 /*https://2010sdafrika.files.wordpress.com/2012/01/bild-2.jpg*/

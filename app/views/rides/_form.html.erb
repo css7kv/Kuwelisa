@@ -1,29 +1,36 @@
-<%= simple_form_for @ride do |form| %>
-<p>
-	<%= form.input :datetime, label: "Scheduling Information" %>
-</p>
-
-<p>
-	<%= form.input :duration, label: "Approximate Duration" %>
-</p>
-
-<p>
-	<%= form.input :startloc, label: "Starting Location" %>
-</p>
-
-<p>
-	<%= form.input :finishloc, label: "End Location" %>
-</p>
-
-<p>
-	<%= form.input :pcount, label: "Number of Passengers" %>
-</p>
+<div class = "row">
 
 
-<p>
-	<%= form.input :price, label: "Suggested Contribution for Gas"%>
-</p>
+    <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10">
 
-<%= form.button :submit %>
 
-<% end %>
+
+		<%= simple_form_for @ride do |form| %>
+		<p>
+			<%= form.input :datetime, label: "Departure Date & Time" %>
+		</p>
+
+		<p>
+			<%= form.input :startloc, label: "Starting Location" %>
+		</p>
+
+		<p>
+			<%= form.input :finishloc, label: "End Location" %>
+		</p>
+
+		<p>
+			<%= form.input :pcount, label: "Number of Passenger Seats Available" %>
+		</p>
+
+
+		<p>
+			<%= form.input :price, label: "Suggested Contribution for Gas"%>
+		</p>
+
+		<%= form.button :submit %><br><br>
+
+		<% end %>
+
+	</div>
+
+</div>

@@ -1,8 +1,10 @@
-
 <br><br>
 <h1 align='center'>Rides</h1>
+
+
 <div class = "container">
-<h2>My Rides</h2>
+<h2>My Rides:</h2>
+
 
 	<% if current_user.rides.empty? %>
 	<strong> You have no rides yet :( </strong>
@@ -37,10 +39,16 @@
 	</div>
 	</p>
 	<%end %>
+</div>
+
+
+
+
 
 
 <div class = "container"> 
-<h2>All Rides</h2>
+<h2>All Rides:</h2>
+
 
 	<% if @rides.empty? %>
 	<strong> No Rides yet :( </strong>
@@ -89,3 +97,5 @@
 	</div>
 	</p>
 	<% end %>
+
+	
