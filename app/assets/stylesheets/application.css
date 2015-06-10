@@ -223,6 +223,7 @@ h1 {
   font-size:80px;
   color: #ccffff;
   text-shadow: 4px 4px rgba(0,0,0,1);
+  margin: -20px;
 }
 
 .lead {
