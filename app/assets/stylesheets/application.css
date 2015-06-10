@@ -29,7 +29,7 @@
 
 .navbar-default .navbar-header .navbar-brand {
     text-transform: uppercase;
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: 'Permanent Marker', cursive;
     font-weight: 700;
     color: #ccffff;
 
@@ -220,8 +220,8 @@ html,body {
 
 h1 {
     font-family: 'Permanent Marker', cursive;
-  font-size:100px;
-  color: #cfeae6;
+  font-size:80px;
+  color: #ccffff;
   text-shadow: 4px 4px rgba(0,0,0,1);
 }
 
@@ -238,7 +238,7 @@ h1 {
   margin: 0 auto;
   width: 100%;
   min-height:100%;
-  background-image: url(http://www.5thaveauctions.co.za/Aug10/images/zoom_199.jpg);
+  background-image: url("https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xft1/v/t35.0-12/11416770_10154833498163647_1313749686_o.jpg?oh=6a2ea60b460480085348081e3f53b1c6&oe=557A84E6&__gda__=1434152803_0ffa718b5f31af23f871d9ec9d4f33d8");
   background-size: cover;
   color: #cfeae6;
   overflow:hidden;
