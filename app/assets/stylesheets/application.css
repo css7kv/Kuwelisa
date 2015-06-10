@@ -119,6 +119,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+    color: #CCFFFF;
 
 }
 
@@ -131,7 +132,7 @@ hr.light {
 }
 
 a {
-    color: rgba(43, 70, 133, 1);
+    color: #CCFFFF;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -139,7 +140,7 @@ a {
 
 a:hover,
 a:focus {
-    color: rgba(26, 49, 108,1);
+    color: #CCFF99;
 }
 
 .btn-primary:hover,
@@ -180,15 +181,17 @@ p {
 }
 
 strong {
-    color: brown;
+    color: #CCFF99;
     font-size: 20px;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     text-transform: uppercase;
 }
 
 
+
+
 m {
-    color: brown;
+    color: #CCFF99;
     font-weight: bold;
     font-size: 40px;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
@@ -256,6 +259,10 @@ h1 {
     right: 0;
     width: 100%;
 
+}
+
+h6 {
+    color: #CCFF99;
 }
 
 

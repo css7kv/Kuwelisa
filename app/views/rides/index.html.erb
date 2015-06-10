@@ -1,5 +1,5 @@
-<br><br>
-<h1 align='center'>Rides</h1>
+<br><br><br>
+
 
 
 <div class = "container">
@@ -19,6 +19,7 @@
 	</div>
 
 	<% if ride.driverid == current_user.id %>
+	<b>
 	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 text-right">	
 		<%= link_to '<i class="fa fa-trash-o fa-4x"></i>'.html_safe + " Delete", ride, :method => :delete, data: {confirm: "Are you sure you want to delete this ride?"} %>
 		</div>
@@ -98,4 +99,4 @@
 	</p>
 	<% end %>
 
-	
+

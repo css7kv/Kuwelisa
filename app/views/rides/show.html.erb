@@ -1,8 +1,9 @@
 <br><br>
 <div class = "row">
-<h2 align='center'>Your Ride from <b><%=@ride.startloc %></b> to <b><%= @ride.finishloc %></b></h2><br>
-	
+<h2 align='center'>Trip from <b><%=@ride.startloc %></b> to <b><%= @ride.finishloc %></b ></h2><br>
+		
 		<div class="col-lg-6 col-md-6" align='center'>
+	
 			<b>Departs from <strong><%=@ride.startloc %></strong><br>
 			on <strong><%= @ride.datetime.strftime("%B %d, %Y") %></strong><br>
 			at <strong><%= @ride.datetime.strftime("%I:%M %p") %></strong><br>
@@ -27,7 +28,8 @@
 				<b>Driver Contact Information:<br>
 					Name: <%= @driver.firstname %> <%= @driver.lastname %><br>
 					Phone number: <%= @driver.phone %><br></b>
-			<% end %>	
+			<% end %>
+			
 		</div>
 		<div class="col-lg-6 col-md-6" align='center'>
 		<div id='map'></div>
