@@ -2,7 +2,7 @@ class RidesController < ApplicationController
   include RidesHelper
   def index
   	@rides = Ride.where.not(pcount: 0).where(:datetime => Time.zone.now..1.year.from_now).order(:datetime)
-    @count = "1"
+    
 
   end
 
@@ -63,11 +63,11 @@ class RidesController < ApplicationController
   def signup
       @ride = Ride.find(params[:id])
       @ride.users << current_user
-      @count = "1"
-      @ride.pcount = @ride.pcount - @count.to_i
+      count = params[:signup][:count]
+      @ride.pcount = @ride.pcount - count.to_i
 
       @ride.save
-      
+  
       send_text_message(@ride, 1)
       redirect_to rides_path
       
