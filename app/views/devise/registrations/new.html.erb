@@ -1,40 +1,51 @@
-<header>
-    <div class="header-content">
-        <div class="header-content-inner" align='center'>
+<div class="container-full">
 
-            <h1>Sign Up</h1>
-
-              
-              <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
+      <div class="row">
+       
+        <div class="col-lg-12 text-center v-center">
+          
+          <h1>Welcome to Kuwelisa</h1>
+          <p class="lead">Sign up below!</p>
+          
+          <br>
+          
+      
+        </div>
+        
+      </div> <!-- /row -->
+  
+      <div class="row", align='center'>
+       
+      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
                 <%= devise_error_messages! %>
 
-                <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
+                <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10">
 
                 <div class="field">
-                  <%= f.input :phone, label: "Phone number:"  %><br /> +27
+                  <%= f.input :phone, placeholder: "Phone number" %><br /> 
                 </div>
 
                 <div class="field">
-                  <%= f.input :firstname, label: "First name" %><br />
+                  <%= f.input :firstname, placeholder: "First name" %><br />
                 </div>
 
                 <div class="field">
-                  <%= f.input :lastname, label: "Last name" %><br />
+                  <%= f.input :lastname, placeholder: "Last name" %><br />
                 </div>
 
                 <div class="field">
-                  <%= f.input :township, collection: ["Khayelitsha", "Mitchell's Plain", "Guguletu"] %><br />
+                  <%= f.input :township, collection: ["Khayelitsha", "Mitchell's Plain", "Guguletu"], placeholder: "Township" %><br />
                 </div>
           
                 <div class="field">
-                  <%= f.input :password %>
+                  <%= f.input :password, placeholder: "Password" %>
                   <% if @minimum_password_length %>
                   <em>(<%= @minimum_password_length %> characters minimum)</em>
                   <% end %><br />
                 </div>
 
                 <div class="field">
-                  <%= f.input :password_confirmation %><br />
+                  <%= f.input :password_confirmation, placeholder: "Password Confirmation" %><br />
                 </div>
 
                 <div class="actions">
@@ -42,12 +53,19 @@
                 </div>
               <% end %>
 
+               <%= render "devise/shared/links" %>
 
-
-            <%= render "devise/shared/links" %>
-
-            </div>
-
-        </div>
+      
       </div>
-</header>
+  
+    <br><br><br><br><br>
+
+</div> <!-- /container full -->
+
+
+
+
+
+              
+
+

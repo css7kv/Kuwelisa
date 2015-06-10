@@ -1,18 +1,32 @@
-<header>
-    <div class="header-content">
-        <div class="header-content-inner" align='center'>
-          <h1>Log In</h1>
-          <hr>
-          <p>
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="container-full">
+
+      <div class="row">
+       
+        <div class="col-lg-12 text-center v-center">
+          
+          <h1>Welcome to Kuwelisa</h1>
+          <p class="lead">Log in below!</p>
+          
+          <br>
+          
+      
+        </div>
+        
+      </div> <!-- /row -->
+
+       <div class="row", align='center'>
+
+            <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
+                <%= devise_error_messages! %>
+
+                <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10">
+        
                 <div class="field">
-                  <%= f.label :phone %><br />
-                  +27 <%= f.phone_field :phone, autofocus: true %>
+                  <%= f.input :phone, placeholder: "Phone number" %><br />
                 </div>
 
                 <div class="field">
-                  <%= f.label :password %><br />
-                  <%= f.password_field :password, autocomplete: "off" %>
+                  <%= f.input :password, placeholder: "Password" %><br />
                 </div>
 
                 <% if devise_mapping.rememberable? -%>
@@ -23,15 +37,14 @@
                 <% end -%>
 
                 <div class="actions">
-                  <%= f.submit "Log in" %>
+                  <%= f.button :submit, "Log in" %>
                 </div>
             <% end %>
-          </p>
 
-<%= render "devise/shared/links" %>
+          <%= render "devise/shared/links" %>
 
-        </div>
+       
       </div>
-</header>
+</div>
 
                 
