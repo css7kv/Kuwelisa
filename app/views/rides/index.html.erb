@@ -64,7 +64,7 @@
 		On: <strong><%= ride.datetime.strftime("%B %d, %Y") %> </strong>
 		</div>
 		<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-left">
-		<m><%= ride.pcount %></m> Seats Left<br>
+		<m><%= ride.pcount %></m> Seat(s) Left<br>
 		</div>
 		
 		<% if ride.users.include?(current_user) %>

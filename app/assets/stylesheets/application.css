@@ -24,18 +24,20 @@
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
+
 }
 
 .navbar-default .navbar-header .navbar-brand {
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
-    color: rgba(43, 70, 133, 1);
+    color: #ccffff;
+
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-    color: rgba(26, 49, 108,1);
+    color: #CCFF99;
 }
 
 .navbar-default .nav > li>a,
@@ -43,17 +45,17 @@
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    color: #222;
+    color: #ccffff;
 }
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: rgba(43, 70, 133, 1);
+    color: #CCFF99;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: rgba(43, 70, 133, 1)!important;
+    color: #ccffff!important;
     background-color: transparent;
 }
 
@@ -119,7 +121,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
-    color: #CCFFFF;
+    color: #cfeae6;
 
 }
 
@@ -132,7 +134,7 @@ hr.light {
 }
 
 a {
-    color: #CCFFFF;
+    color: #cfeae6;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -161,7 +163,7 @@ h4,
 h5,
 h6 {
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    color: #CCFFFF;
+    color: #cfeae6;
 }
 
 h2 {
@@ -171,13 +173,13 @@ p {
     margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.5;
-    color: #CCFFFF;
+    color: #cfeae6;
 }
 
 .simple_form label {
  
   text-align: center;
-  color: #CCFFFF;
+  color: #cfeae6;
 }
 
 strong {
@@ -191,7 +193,7 @@ strong {
 
 
 m {
-    color: #CCFF99;
+    color: #ccff99;
     font-weight: bold;
     font-size: 40px;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
@@ -219,7 +221,7 @@ html,body {
 h1 {
     font-family: 'Permanent Marker', cursive;
   font-size:100px;
-  color: ##CCFFFF;
+  color: #cfeae6;
   text-shadow: 4px 4px rgba(0,0,0,1);
 }
 
@@ -238,7 +240,7 @@ h1 {
   min-height:100%;
   background-image: url(http://www.5thaveauctions.co.za/Aug10/images/zoom_199.jpg);
   background-size: cover;
-  color: #CCFFFF;
+  color: #cfeae6;
   overflow:hidden;
 }
 
