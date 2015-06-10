@@ -50,13 +50,13 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 
     var fixedMarker1 = L.marker(new L.LatLng("<%=escape_javascript @ride.locations.first.latitude.to_s %>", "<%=escape_javascript @ride.locations.first.longitude.to_s %>"), {
     icon: L.mapbox.marker.icon({
-        'marker-color': 'ff8888'
+        'marker-color': 'CCFF99'
     })
 }).bindPopup("<%=escape_javascript @ride.locations.first.address.to_s %>").addTo(map);
 
    var fixedMarker2 = L.marker(new L.LatLng("<%=escape_javascript @ride.locations.last.latitude.to_s %>", "<%=escape_javascript @ride.locations.last.longitude.to_s %>"), {
     icon: L.mapbox.marker.icon({
-        'marker-color': 'ff8888'
+        'marker-color': 'CCFF99'
     })
 }).bindPopup("<%=escape_javascript @ride.locations.last.address.to_s %>").addTo(map);
 

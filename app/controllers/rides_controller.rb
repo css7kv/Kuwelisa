@@ -38,7 +38,15 @@ class RidesController < ApplicationController
 
   def update
   	@ride = Ride.find(params[:id])
-  	if @ride.save
+  	if @ride.update(ride_params)
+      @ride.locations.destroy_all
+      startloc = Location.create(:address => @ride.startloc)
+      @ride.locations << startloc
+      finishloc = Location.create(:address => @ride.finishloc)
+      @ride.locations << finishloc
+      @ride.save
+      startloc.save
+      finishloc.save
       send_text_message(@ride, 2)
       redirect_to @ride
   	else
