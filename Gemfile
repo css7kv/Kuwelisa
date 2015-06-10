@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# Mapbox
+gem 'mapbox-rails'
+# Geocoder
+gem 'geocoder'
 # Twilio
 gem 'twilio-ruby'
 # Simple Form

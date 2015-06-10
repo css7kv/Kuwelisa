@@ -193,6 +193,8 @@ body {
     webkit-tap-highlight-color: #222;
 }
 
+ #map { position:absolute; max-width: none; min-width: 0px; top:0; bottom:0; height: 500px; width: 100%; }
+
 
 
 html,body {
