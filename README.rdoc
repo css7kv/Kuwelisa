@@ -38,7 +38,12 @@ Ride Destroy- Confirmation to all other passengers
 TODO:
 Unsignup for ride
 Make sure edit Ride works for the location/map lat/long
+Upload to Heroku
+
+Extra TODO:
+get rid of alerts
 Rigorous testing
+Add Routes
 
 
 
