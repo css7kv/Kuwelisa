@@ -32,9 +32,6 @@ Ride Edit- Confirmation to all other passengers
 Ride Destroy- Confirmation to all other passengers
 
 TODO:
-Validations- error messages if not proper south african number (Starts with without +27)
-Ride_Helper - Automatically add +27 to text sender
-Maps - Adding visible map and distance calculating
 Update Profile- NOT WORKING AT ALL
 Rides Displayed - Only Display Rides with the right township
 Fix login page to look pretty :)

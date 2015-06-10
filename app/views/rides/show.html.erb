@@ -1,3 +1,4 @@
+<br><br>
 <div class = "row">
 <h2 align='center'>Your Ride from <b><%=@ride.startloc %></b> to <b><%= @ride.finishloc %></b></h2><br>
 	
@@ -7,7 +8,6 @@
 			at <strong><%= @ride.datetime.strftime("%I:%M %p") %></strong><br>
 			Passenger seats remaining: <strong><%= @ride.pcount %></strong><br>
 			R <strong><%= @ride.price %></strong> per person <br>
-			The trip will take approximately <strong><%= @ride.duration.strftime("%I hrs and %M mins") %></strong><br>
 			</b>
 
 			to <strong><%= @ride.finishloc %></strong> <br><br>
@@ -34,7 +34,8 @@
 		</div>
 
 	</div>
-
+<!-- //
+// -->
 		
 <script>
 // L.mapbox.accessToken = 'pk.eyJ1Ijoib3NjYXJ3MyIsImEiOiIxZDQ4MTE2NGFlYWJjNTY1ODZhMWJmNzQ3OTUwZGE4MyJ9.tlyn20Cn-ecT9wwQYHtpzA';
@@ -42,9 +43,34 @@
 //     .setView([40, -74.50], 9);
 
 L.mapbox.accessToken = 'pk.eyJ1Ijoib3NjYXJ3MyIsImEiOiIxZDQ4MTE2NGFlYWJjNTY1ODZhMWJmNzQ3OTUwZGE4MyJ9.tlyn20Cn-ecT9wwQYHtpzA';
-var map = L.mapbox.map('map', 'oscarw3.196c5bc4')
-    .setView([-34, 18.5], 11);
+var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([38, -102.0], 9);
+
+    var fixedMarker1 = L.marker(new L.LatLng("<%=escape_javascript @ride.locations.first.latitude.to_s %>", "<%=escape_javascript @ride.locations.first.longitude.to_s %>"), {
+    icon: L.mapbox.marker.icon({
+        'marker-color': 'ff8888'
+    })
+}).bindPopup("<%=escape_javascript @ride.locations.first.address.to_s %>").addTo(map);
+
+   var fixedMarker2 = L.marker(new L.LatLng("<%=escape_javascript @ride.locations.last.latitude.to_s %>", "<%=escape_javascript @ride.locations.last.longitude.to_s %>"), {
+    icon: L.mapbox.marker.icon({
+        'marker-color': 'ff8888'
+    })
+}).bindPopup("<%=escape_javascript @ride.locations.last.address.to_s %>").addTo(map);
+
+   var group = new L.featureGroup([fixedMarker1, fixedMarker2]);
+
+ 	map.fitBounds(group.getBounds());
+
+ 	var directions = L.mapbox.directions();
+
+var directionsLayer = L.mapbox.directions.layer(directions)
+    .addTo(map);
+
+
+
 </script>
+
 </div>
 
 
