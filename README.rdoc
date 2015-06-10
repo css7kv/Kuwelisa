@@ -23,6 +23,10 @@ Finish location
 Price: Float
 DriverID: Int
 
+Location
+Address
+Latitude
+Longitude
 has_and_belongs_to_many
 
 Texts: * See Ride_Helper
