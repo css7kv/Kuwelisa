@@ -1,5 +1,10 @@
 module RidesHelper
-
+  def actualnum(num)
+    num = num.split(//)
+    num.shift
+    num.unshift "+27"
+    num = num.join
+  end
 	def send_text_message(ride, num)
 		# 0 = User Creates an Account (current_user)
 		# 1 = Ride Sign Up (current_user and driver)
@@ -17,6 +22,8 @@ module RidesHelper
   # from_number = "+15005550006"
   # Developer number +15005550006
   # Emergency code SjBcxP8IdNqX//QdKvr8+Ma6o/DSWQU6m0nprKfT
+  #0715796472
+  #0606094336
 		driver = User.find(ride.driverid)
 
 
@@ -37,14 +44,14 @@ module RidesHelper
   if num == 1
   message = @client.messages.create(
     from: from_number,
-    to: "+27" + current_user.phone,
-    body: "You have successfully signed up for a ride from #{ride.startloc} to #{ride.finishloc} on #{ride.datetime.strftime("%B %d, %Y")} at #{ride.datetime.strftime("%I:%M %p")}. Your driver's number is +27#{driver.phone}."
+    to: actualnum(current_user.phone),
+    body: "You have successfully signed up for a ride from #{ride.startloc} to #{ride.finishloc} on #{ride.datetime.strftime("%B %d, %Y")} at #{ride.datetime.strftime("%I:%M %p")}. Your driver's number is #{driver.phone}."
   )
 
     message = @client.messages.create(
     from: from_number,
-    to: "+27" + driver.phone,
-    body: "#{current_user.firstname} has signed up for your trip from #{ride.startloc} on #{ride.datetime.strftime("%B %d, %Y")} at #{ride.datetime.strftime("%I:%M %p")}. Their number is +27#{current_user.phone}."
+    to: actualnum(driver.phone),
+    body: "#{current_user.firstname} has signed up for your trip from #{ride.startloc} on #{ride.datetime.strftime("%B %d, %Y")} at #{ride.datetime.strftime("%I:%M %p")}. Their number is #{current_user.phone}."
   )
   # elsif num == 0
   # 	message = @client.messages.create(
@@ -57,7 +64,7 @@ module RidesHelper
       if passenger.id != driver.id 
       message = @client.messages.create(
       from: from_number,
-      to: "+27" + passenger.phone,
+      to: actualnum(passenger.phone),
       body: "Your ride on the #{ride.datetime} has been changed. It is now from #{ride.startloc} to #{ride.finishloc} on #{ride.datetime.strftime("%B %d, %Y")} at #{ride.datetime.strftime("%I:%M %p")}. Please go online if you would like more details."
     )
      end
@@ -67,7 +74,7 @@ elsif num == 3
       if passenger.id != driver.id 
       message = @client.messages.create(
       from: from_number,
-      to: "+27" + passenger.phone,
+      to: actualnum(passenger.phone),
       body: "Your ride on #{ride.datetime.strftime("%B %d, %Y")} at #{ride.datetime.strftime("%I:%M %p")} from #{ride.startloc} to #{ride.finishloc} has been cancelled."
     )
   end
@@ -76,4 +83,7 @@ end
 
   
 end
+
+
+
 end
