@@ -14,5 +14,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email, :allow_blank => true
 
+  validates :phone, uniqueness: true, length: { is: 9 }
+
   validates :firstname, presence: true
 end

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608183643) do
+ActiveRecord::Schema.define(version: 20150610075633) do
 
   create_table "rides", force: :cascade do |t|
     t.datetime "datetime"
     t.time     "duration"
     t.string   "startloc"
     t.string   "finishloc"
-    t.float    "price"
+    t.integer  "price"
     t.integer  "driverid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
