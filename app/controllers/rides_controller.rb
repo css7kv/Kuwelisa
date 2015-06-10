@@ -71,8 +71,7 @@ class RidesController < ApplicationController
   def signup
       @ride = Ride.find(params[:id])
       @ride.users << current_user
-      @count = "1"
-      @ride.pcount = @ride.pcount - @count.to_i
+      @ride.pcount = @ride.pcount - count.to_i
 
       @ride.save
       
