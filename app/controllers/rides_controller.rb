@@ -71,8 +71,11 @@ class RidesController < ApplicationController
   def signup
       @ride = Ride.find(params[:id])
       @ride.users << current_user
+      count = params[:count]
+      # count = "1"
+      puts "count is here:"
+      puts count.class 
       @ride.pcount = @ride.pcount - count.to_i
-
       @ride.save
       
       send_text_message(@ride, 1)
