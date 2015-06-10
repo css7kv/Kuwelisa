@@ -17,6 +17,14 @@ class RidesController < ApplicationController
   	@ride.driverid = current_user.id
   	@ride.users << current_user
   	if @ride.save 
+      startloc = Location.create(:address => @ride.startloc)
+      @ride.locations << startloc
+      finishloc = Location.create(:address => @ride.finishloc)
+      @ride.locations << finishloc
+      @ride.save
+      startloc.save
+      finishloc.save
+    
   		redirect_to @ride
   	else
   		render :new
