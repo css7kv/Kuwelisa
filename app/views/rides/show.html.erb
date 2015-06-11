@@ -1,3 +1,39 @@
+<style>
+#inputs,
+#errors,
+#directions {
+    position: absolute;
+    width: 33.3333%;
+    max-width: 300px;
+    min-width: 200px;
+}
+
+#inputs {
+    z-index: 10;
+    top: 10px;
+    left: 10px;
+}
+
+#directions {
+    z-index: 99;
+    background: rgba(0,0,0,.8);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+#errors {
+    z-index: 8;
+    opacity: 0;
+    padding: 10px;
+    border-radius: 0 0 3px 3px;
+    background: rgba(0,0,0,.25);
+    top: 90px;
+    left: 10px;
+}
+
+</style>
 <br><br>
 <div class = "row">
 <h2 align='center'>Trip from <b id="font1"><%=@ride.startloc %></b> to <b id="font2"><%= @ride.finishloc %></b ></h2><br>
@@ -11,7 +47,10 @@
 			R <strong><%= @ride.price %></strong> per person <br>
 			</b>
 
-			to <strong id="font2"><%= @ride.finishloc %></strong> <br><br>
+			to <strong id="font2"><%= @ride.finishloc %></strong> <br>
+			<% if @duration != 0 %>
+			It will take approximately <strong><%= @duration %></strong> <br><%end %> 
+			<br>
 
 			<% if @ride.driverid == current_user.id %>
 				<strong> You're driving! </strong><br>
@@ -33,6 +72,9 @@
 		</div>
 		<div class="col-lg-6 col-md-6" align='center'>
 		<div id='map'></div>
+		<div id='directions'>
+  		<div id='routes'></div>
+		</div>
 		</div>
 
 	</div>
@@ -66,9 +108,18 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 
  	map.fitBounds(group.getBounds());
 
- 	var directions = L.mapbox.directions();
+ var directions = L.mapbox.directions();
 
 var directionsLayer = L.mapbox.directions.layer(directions)
+    .addTo(map);
+
+var directionsInputControl = L.mapbox.directions.inputControl('inputs', directions)
+    .addTo(map);
+
+var directionsErrorsControl = L.mapbox.directions.errorsControl('errors', directions)
+    .addTo(map);
+
+var directionsRoutesControl = L.mapbox.directions.routesControl('routes', directions)
     .addTo(map);
 
 

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-
-
+# Typhoeus API reader
+gem "typhoeus"
 # Mapbox
 gem 'mapbox-rails'
 # Geocoder

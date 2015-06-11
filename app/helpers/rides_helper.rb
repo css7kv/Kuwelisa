@@ -1,4 +1,16 @@
 module RidesHelper
+
+  def durationcalculator(wp1lat, wp1long, wp2lat, wp2long)
+    response = Typhoeus.get("http://api.tiles.mapbox.com/v4/directions/mapbox.driving/#{wp1long.to_s},#{wp1lat.to_s};#{wp2long.to_s},#{wp2lat.to_s}.json?access_token=pk.eyJ1Ijoib3NjYXJ3MyIsImEiOiIxZDQ4MTE2NGFlYWJjNTY1ODZhMWJmNzQ3OTUwZGE4MyJ9.tlyn20Cn-ecT9wwQYHtpzA")
+    results = JSON.parse(response.body)
+    if(results["routes"]!=nil)
+    seconds = results["routes"][0]["duration"]
+    Time.at(seconds).utc.strftime("%H:%M:%S")
+    else
+    0
+    end  
+  end
+
   def actualnum(num)
     num = num.split(//)
     num.shift
