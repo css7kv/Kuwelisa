@@ -91,6 +91,9 @@ class RidesController < ApplicationController
       redirect_to rides_path
   end
 
+  def mission
+  end
+
 
 
   private

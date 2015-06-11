@@ -1,59 +1,3 @@
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Kuwelisa</div><br>
-                <a href="#services" class="page-scroll btn btn-xl">Log In</a><br><br>
-                <a href="#contact" class="page-scroll btn btn-xl">Learn About Our Mission</a><br><br>
-                <a href="sign_up" class="page-scroll btn btn-xl">Sign Up</a>
-
-            </div>
-        </div>
-    </header>
-
-     <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Log In</h2>
-                </div>
-            </div>
-              <div class="row", align='center'>
-
-            <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
-                <%= devise_error_messages! %>
-
-                <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-1 col-xs-10">
-        
-                <div class="field">
-                  <%= f.input :phone, placeholder: "Phone number" %><br />
-                </div>
-
-                <div class="field">
-                  <%= f.input :password, placeholder: "Password" %><br />
-                </div>
-
-                <% if devise_mapping.rememberable? -%>
-                  <div class="field">
-                    <%= f.check_box :remember_me %>
-                    <%= f.label :remember_me %>
-                  </div>
-                <% end -%>
-
-                <div class="actions">
-                  <%= f.button :submit, "Log in" %>
-                </div>
-            <% end %>
-
-          <%= render "devise/shared/links" %>
-
-       
-      </div>
-            </div>
-        </div>
-    </section>
-
-
     <!-- Services Section -->
    <section id="contact">
         <div class="container">
@@ -91,16 +35,3 @@
             </div>
         </div>
     </section>
-
-    <!-- Services Section -->
-   
-  
-
-
-
-
-
-
-
-
-                
