@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.easing.min.js
-//= require classie.js
-//= require cbpAnimatedHeader.min.js
 //= require jqBootstrapValidation.js
 
 //= require agency.js
