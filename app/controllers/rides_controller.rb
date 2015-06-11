@@ -80,7 +80,14 @@ class RidesController < ApplicationController
       
   end
 
-  
+  def unsignup
+      @ride = Ride.find(params[:id])
+      @ride.users.delete(current_user)
+      @ride.pcount = @ride.pcount + 1
+      @ride.save
+      send_text_message(@ride, 4)
+      redirect_to rides_path
+  end
 
 
 

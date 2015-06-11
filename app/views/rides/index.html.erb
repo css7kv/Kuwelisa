@@ -16,7 +16,10 @@
 	<div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
 		From: <strong><%= ride.startloc %></strong> to <strong><%= ride.finishloc %></strong> <br>
 		At: <strong><%= ride.datetime.strftime("%I:%M %p") %> </strong>
-		On: <strong><%= ride.datetime.strftime("%B %d, %Y") %> </strong>
+		On: <strong><%= ride.datetime.strftime("%B %d, %Y") %> </strong> 
+		<% if ride.driverid == (current_user.id) %>
+		<i class="fa fa-car fa-lg"></i>
+		<% end %>
 	</div>
 
 	<% if ride.driverid == current_user.id %>
@@ -69,10 +72,17 @@
 		</div>
 		
 		<% if ride.users.include?(current_user) %>
+		<% if ride.driverid == (current_user.id) %>
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-center">
+			<%= link_to '<i class="fa fa-car fa-4x"></i>'.html_safe, ride_path(ride) %>  <br>
+			 You're Driving! 
+		</div>
+		<% else %>
 		<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-center">
-			<%= link_to '<i class="fa fa-check-circle-o fa-4x"></i>'.html_safe, ride_path(ride) %>  <br>
+			<%= link_to '<i class="fa fa-check-circle-o fa-4x"></i>'.html_safe, unsignup_ride_path(ride), data: {confirm: "Please Click OK if you want to remove yourself from the passenger list."} %>  <br>
 			 You're Signed Up! 
 		</div>
+		<% end %>
 		<% else %>
 		<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 text-center">
 			<%= simple_form_for :signup, { url: signup_ride_path(ride) } do |f| %>
