@@ -1,6 +1,6 @@
 <br><br>
 <div class = "row">
-<h2 align='center'>Trip from <b><t><%=@ride.startloc %></t></b> to <b><n><%= @ride.finishloc %></n></b ></h2><br>
+<h2 align='center'>Trip from <b id="font1"><%=@ride.startloc %></b> to <b id="font2"><%= @ride.finishloc %></b ></h2><br>
 		
 		<div class="col-lg-6 col-md-6" align='center'>
 	
@@ -11,7 +11,7 @@
 			R <strong><%= @ride.price %></strong> per person <br>
 			</b>
 
-			to <strong><n><%= @ride.finishloc %></n></strong> <br><br>
+			to <strong id="font2"><%= @ride.finishloc %></strong> <br><br>
 
 			<% if @ride.driverid == current_user.id %>
 				<strong> You're driving! </strong><br>

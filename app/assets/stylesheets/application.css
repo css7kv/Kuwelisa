@@ -15,12 +15,13 @@
  */
 
 
-t {
+#font1 {
     color: #CCFF99;
 }
 
-n {
-    color: #ff8888;
+
+#font2 {
+    color: #ff8888;   
 }
 
 .navbar-default {
