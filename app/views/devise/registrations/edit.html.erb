@@ -1,12 +1,12 @@
-<header>
+
     <div class="header-content">
     <div class="header-content-inner" align='center'>
-        <br><br><h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <br><br><br><h2>Edit <%= resource_name.to_s.humanize %></h2>
         <p>Change Your Details Here!</p>
 
 
 
-        <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
+        <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8">
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= devise_error_messages! %>
           
@@ -49,4 +49,3 @@
       </div>
     </div>
   </div>
-</header>
