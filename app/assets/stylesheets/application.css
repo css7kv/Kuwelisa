@@ -15,7 +15,13 @@
  */
 
 
+t {
+    color: #CCFF99;
+}
 
+n {
+    color: #ff8888;
+}
 
 .navbar-default {
     border-color: rgba(34,34,34,.05);
