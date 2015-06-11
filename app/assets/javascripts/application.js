@@ -17,7 +17,7 @@
 //= require classie.js
 //= require cbpAnimatedHeader.min.js
 //= require jqBootstrapValidation.js
-//= require contact_me.js
+
 //= require agency.js
 //= require turbolinks
 //= require_tree .
