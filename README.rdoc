@@ -37,10 +37,10 @@ Ride Destroy- Confirmation to all other passengers
 
 TODO:
 Upload to Heroku
-Validations for New Ride
 
 Extra TODO:
 get rid of alerts
+Change simple form error styling 
 Rigorous testing
 Driving Routes
 
