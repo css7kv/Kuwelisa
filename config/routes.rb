@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'send_text_message'
     member do
         post 'signup'
+        get 'unsignup'
       end
   end
 

@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150610110039) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "locations", force: :cascade do |t|
     t.string   "address"
     t.float    "latitude"
@@ -63,6 +66,6 @@ ActiveRecord::Schema.define(version: 20150610110039) do
     t.text     "intro"
   end
 
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

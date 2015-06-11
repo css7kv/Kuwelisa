@@ -16,5 +16,5 @@ class User < ActiveRecord::Base
 
   validates :phone, uniqueness: true, length: { is: 10 }
 
-  validates :firstname, presence: true
+  validates :firstname, :lastname, :password, presence: true
 end

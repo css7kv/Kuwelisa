@@ -6,10 +6,11 @@ module RidesHelper
     num = num.join
   end
 	def send_text_message(ride, num)
-		# 0 = User Creates an Account (current_user)
+		
 		# 1 = Ride Sign Up (current_user and driver)
 		# 2 = Ride Edit (all ride.users)
 		# 3 = Ride Destroy (passengers)
+    # 4 = User Unsignedup (driver)
 
   #Real Credentials
       # account_sid = 'AC818b91aaf3aa4883ebd967c1ce05b4f8'
@@ -54,12 +55,12 @@ module RidesHelper
     to: actualnum(driver.phone),
     body: "#{current_user.firstname} has signed up for your trip from #{ride.startloc} on #{ride.datetime.strftime("%B %d, %Y")} at #{ride.datetime.strftime("%I:%M %p")}. Their number is #{current_user.phone}."
   )
-  # elsif num == 0
-  # 	message = @client.messages.create(
-  #   from: from_number,
-  #   to: current_user.phone,
-  #   body: 'You have successfully created an account for Kuwelisa!'
-  # )
+  elsif num == 4
+   	 message = @client.messages.create(
+     from: from_number,
+     to: actualnum(driver.phone),
+     body: "#{current_user.firstname} is no longer signd up for your trip from #{ride.startloc} on #{ride.datetime.strftime("%B %d, %Y")} at #{ride.datetime.strftime("%I:%M %p")}."
+   )
   elsif num == 2
     ride.users.each do |passenger|
       if passenger.id != driver.id 
