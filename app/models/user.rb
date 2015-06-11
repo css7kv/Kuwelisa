@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
   validates :phone, uniqueness: true, length: { is: 10 }
 
   validates :firstname, :lastname, :password, presence: true
+
+  validates :phone, numericality: { only_integer: true }
 end
