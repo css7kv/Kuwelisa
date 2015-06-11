@@ -188,6 +188,19 @@ p {
   color: #cfeae6;
 }
 
+.simple_form .error {
+  color: #ff8888;
+}
+
+.simple_form .hint {
+  color: #ff8888;
+}
+
+.field_with_errors {
+  color: #ff8888;
+}
+
+
 strong {
     color: #CCFF99;
     font-size: 20px;
