@@ -4,5 +4,5 @@ class Ride < ActiveRecord::Base
 
 	validates :startloc, :finishloc, :price, :datetime, :pcount, presence: true
 	validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-	validates :pcount, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
+	validates :pcount, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 end

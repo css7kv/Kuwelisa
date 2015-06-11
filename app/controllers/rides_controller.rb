@@ -73,6 +73,8 @@ class RidesController < ApplicationController
       @ride.users << current_user
       count = params[:signup][:count]
       @ride.pcount = @ride.pcount - count.to_i
+    
+      
       @ride.save
   
       send_text_message(@ride, 1)
