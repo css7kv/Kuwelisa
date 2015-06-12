@@ -59,6 +59,7 @@ class RidesController < ApplicationController
   	@ride = Ride.find(params[:id])
     @driver = User.find(@ride.driverid)
     @duration = durationcalculator(@ride.locations.first.latitude, @ride.locations.first.longitude, @ride.locations.last.latitude, @ride.locations.last.longitude)
+    @mproute = waypointcalculator(@ride.locations.first.latitude, @ride.locations.first.longitude, @ride.locations.last.latitude, @ride.locations.last.longitude)
 
   end
 

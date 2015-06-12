@@ -72,8 +72,6 @@
 		</div>
 		<div class="col-lg-6 col-md-6" align='center'>
 		<div id='map'></div>
-		<div id='directions'>
-  		<div id='routes'></div>
 		</div>
 		</div>
 
@@ -82,13 +80,10 @@
 // -->
 		
 <script>
-// L.mapbox.accessToken = 'pk.eyJ1Ijoib3NjYXJ3MyIsImEiOiIxZDQ4MTE2NGFlYWJjNTY1ODZhMWJmNzQ3OTUwZGE4MyJ9.tlyn20Cn-ecT9wwQYHtpzA';
-// var map = L.mapbox.map('map', 'mapbox.streets')
-//     .setView([40, -74.50], 9);
-
 L.mapbox.accessToken = 'pk.eyJ1Ijoib3NjYXJ3MyIsImEiOiIxZDQ4MTE2NGFlYWJjNTY1ODZhMWJmNzQ3OTUwZGE4MyJ9.tlyn20Cn-ecT9wwQYHtpzA';
 var map = L.mapbox.map('map', 'mapbox.streets')
-    .setView([38, -102.0], 9);
+    .setView([40, -74.50], 9);
+
 
     var fixedMarker1 = L.marker(new L.LatLng("<%=escape_javascript @ride.locations.first.latitude.to_s %>", "<%=escape_javascript @ride.locations.first.longitude.to_s %>"), {
     icon: L.mapbox.marker.icon({
@@ -106,22 +101,17 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 
    var group = new L.featureGroup([fixedMarker1, fixedMarker2]);
 
- 	map.fitBounds(group.getBounds());
+// // For routes....
+// var line_points = JSON.parse("<%=escape_javascript @mproute.to_json %>");
 
- var directions = L.mapbox.directions();
+// var polyline_options = {
+//     color: '#000'
+// };
 
-var directionsLayer = L.mapbox.directions.layer(directions)
-    .addTo(map);
+// var polyline = L.polyline(line_points, polyline_options).addTo(map);
 
-var directionsInputControl = L.mapbox.directions.inputControl('inputs', directions)
-    .addTo(map);
 
-var directionsErrorsControl = L.mapbox.directions.errorsControl('errors', directions)
-    .addTo(map);
-
-var directionsRoutesControl = L.mapbox.directions.routesControl('routes', directions)
-    .addTo(map);
-
+map.fitBounds(group.getBounds());
 
 
 </script>

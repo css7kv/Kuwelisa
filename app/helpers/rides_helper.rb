@@ -11,6 +11,16 @@ module RidesHelper
     end  
   end
 
+  def waypointcalculator(wp1lat, wp1long, wp2lat, wp2long)
+    response = Typhoeus.get("http://api.tiles.mapbox.com/v4/directions/mapbox.driving/#{wp1long.to_s},#{wp1lat.to_s};#{wp2long.to_s},#{wp2lat.to_s}.json?access_token=pk.eyJ1Ijoib3NjYXJ3MyIsImEiOiIxZDQ4MTE2NGFlYWJjNTY1ODZhMWJmNzQ3OTUwZGE4MyJ9.tlyn20Cn-ecT9wwQYHtpzA")
+    results = JSON.parse(response.body)
+    if(results["routes"]!=nil)
+    waypoints = results["routes"][0]["geometry"]["coordinates"]
+    else
+    []  
+    end
+  end
+
   def actualnum(num)
     num = num.split(//)
     num.shift
@@ -25,14 +35,14 @@ module RidesHelper
     # 4 = User Unsignedup (driver)
 
   #Real Credentials
-      account_sid = 'AC818b91aaf3aa4883ebd967c1ce05b4f8'
-      auth_token = '635c887a39e2db3fffb74f31806d54d2'
-      from_number = "+14086414548"
+      # account_sid = 'AC818b91aaf3aa4883ebd967c1ce05b4f8'
+      # auth_token = '635c887a39e2db3fffb74f31806d54d2'
+      # from_number = "+14086414548"
       
   # Test Credentials
-  # account_sid = 'ACec40d0700dbd21edb9714b8b6ee492d6'
-  # auth_token = '9924fa846b8eff1d94faee71ac69eb5f'
-  # from_number = "+15005550006"
+  account_sid = 'ACec40d0700dbd21edb9714b8b6ee492d6'
+  auth_token = '9924fa846b8eff1d94faee71ac69eb5f'
+  from_number = "+15005550006"
   
   # Developer number +15005550006
   # Emergency code SjBcxP8IdNqX//QdKvr8+Ma6o/DSWQU6m0nprKfT
